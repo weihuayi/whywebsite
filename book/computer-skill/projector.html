@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Internet | 简介</title>
+        <title>投影仪 | 简介</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -37,10 +37,8 @@
         
     
     
-    <link rel="next" href="./udist.html" />
     
-    
-    <link rel="prev" href="./git.html" />
+    <link rel="prev" href="./scp.html" />
     
 
         
@@ -49,9 +47,9 @@
         
         
     <div class="book"
-        data-level="6"
-        data-chapter-title="Internet"
-        data-filepath="internet.md"
+        data-level="18"
+        data-chapter-title="投影仪"
+        data-filepath="projector.md"
         data-basepath="."
         data-revision="Wed Sep 21 2016 22:14:17 GMT+0800 (CST)"
         data-innerlanguage="">
@@ -157,7 +155,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6" data-path="internet.html">
+        <li class="chapter " data-level="6" data-path="internet.html">
             
                 
                     <a href="./internet.html">
@@ -337,7 +335,7 @@
             
         </li>
     
-        <li class="chapter " data-level="18" data-path="projector.html">
+        <li class="chapter active" data-level="18" data-path="projector.html">
             
                 
                     <a href="./projector.html">
@@ -385,22 +383,23 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="mentohust-autostart"><code>mentohust</code> autostart</h1>
+                        <h1 id="ubuntu-&#x4E0E;-&#x6295;&#x5F71;&#x4EEA;">ubuntu &#x4E0E; &#x6295;&#x5F71;&#x4EEA;</h1>
+<p><code>xrandr</code> &#x547D;&#x4EE4;&#x884C;&#x53EF;&#x4EE5;&#x5F88;&#x65B9;&#x4FBF;&#x5730;&#x5207;&#x6362;&#x53CC;&#x5C4F;&#xFF0C;&#x5E38;&#x7528;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x63A2;&#x7D22;&#xFF1A;</p>
 <ol>
-<li><p>Open <code>/etc/rc.local</code></p>
-<pre><code>sudo vim /etc/rc.local
+<li>&#x6253;&#x5F00;&#x5916;&#x63A5;&#x663E;&#x793A;&#x5668;(&#x6700;&#x9AD8;&#x5206;&#x8FA8;&#x7387;)&#xFF0C;&#x4E0E;&#x7B14;&#x8BB0;&#x672C;&#x6DB2;&#x6676;&#x5C4F;&#x5E55;&#x663E;&#x793A;&#x540C;&#x6837;&#x5185;&#x5BB9;&#xFF08;&#x514B;&#x9686;&#xFF09;<pre><code>$ xrandr --output VGA --same-as LVDS --auto
 </code></pre></li>
-<li><p>Add the following lines before the <code>exit 0</code> line:</p>
-</li>
+<li>&#x6253;&#x5F00;&#x5916;&#x63A5;&#x663E;&#x793A;&#x5668;(&#x5206;&#x8FA8;&#x7387;&#x4E3A;1024x768)&#xFF0C;&#x4E0E;&#x7B14;&#x8BB0;&#x672C;&#x6DB2;&#x6676;&#x5C4F;&#x5E55;&#x663E;&#x793A;&#x540C;&#x6837;&#x5185;&#x5BB9;&#xFF08;&#x514B;&#x9686;&#xFF09;<pre><code>$ xrandr --output VGA --same-as LVDS --mode 1024x768
+</code></pre></li>
+<li>&#x6253;&#x5F00;&#x5916;&#x63A5;&#x663E;&#x793A;&#x5668;(&#x6700;&#x9AD8;&#x5206;&#x8FA8;&#x7387;)&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;&#x53F3;&#x4FA7;&#x6269;&#x5C55;&#x5C4F;&#x5E55;<pre><code>xrandr --output VGA --right-of LVDS --auto
+</code></pre></li>
+<li>&#x5173;&#x95ED;&#x5916;&#x63A5;&#x663E;&#x793A;&#x5668;<pre><code>xrandr --output VGA --off
+</code></pre></li>
+<li>&#x6253;&#x5F00;&#x5916;&#x63A5;&#x663E;&#x793A;&#x5668;&#xFF0C;&#x540C;&#x65F6;&#x5173;&#x95ED;&#x7B14;&#x8BB0;&#x672C;&#x6DB2;&#x6676;&#x5C4F;&#x5E55;&#xFF08;&#x53EA;&#x7528;&#x5916;&#x63A5;&#x663E;&#x793A;&#x5668;&#x5DE5;&#x4F5C;&#xFF09;<pre><code>xrandr --output VGA --auto --output LVDS --off
+</code></pre></li>
+<li>&#x5173;&#x95ED;&#x5916;&#x63A5;&#x663E;&#x793A;&#x5668;&#xFF0C;&#x540C;&#x65F6;&#x6253;&#x5F00;&#x7B14;&#x8BB0;&#x672C;&#x6DB2;&#x6676;&#x5C4F;&#x5E55; (&#x53EA;&#x7528;&#x7B14;&#x8BB0;&#x672C;&#x6DB2;&#x6676;&#x5C4F;)<pre><code>xrandr --output VGA --off --output LVDS --auto
+</code></pre></li>
 </ol>
-<pre><code>if [ -x /usr/bin/mentohust ]; then
-/usr/bin/mentohust
-fi
-</code></pre><h1 id="redirect-the-website-address-in-system-level">Redirect the website address in system level</h1>
-<h1 id="wifi-&#x7684;&#x91CD;&#x65B0;&#x542F;&#x52A8;">Wifi &#x7684;&#x91CD;&#x65B0;&#x542F;&#x52A8;</h1>
-<pre><code>$ sudo ifconfig wlp9s0
-$ sudo service network-manager restart
-</code></pre>
+
                     
                     </section>
                 
@@ -410,10 +409,8 @@ $ sudo service network-manager restart
         </div>
 
         
-        <a href="./git.html" class="navigation navigation-prev " aria-label="Previous page: Git"><i class="fa fa-angle-left"></i></a>
+        <a href="./scp.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: scp"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="./udist.html" class="navigation navigation-next " aria-label="Next page: USB Disk"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
